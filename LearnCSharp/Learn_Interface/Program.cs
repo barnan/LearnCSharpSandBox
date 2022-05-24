@@ -8,6 +8,9 @@ namespace Learn_Interface
     {
         private static void Main(string[] args)
         {
+            KeyValuePair<DateTime, uint> valami = default(KeyValuePair<DateTime, uint>);
+            Console.WriteLine(valami);
+
             Console.WriteLine("Hello World!");
 
             // interface kiválasztás

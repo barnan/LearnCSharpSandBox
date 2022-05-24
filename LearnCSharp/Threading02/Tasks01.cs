@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Threading02
 {
-    internal class Tasks01
+    internal class Tasks01                      // task api is a threadpoolt használja
     {
         public static void Execute()
         {

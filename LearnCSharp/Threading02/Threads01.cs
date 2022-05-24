@@ -11,7 +11,7 @@ namespace Threading02
             {
                 Thread.CurrentThread.Name = "fő szál";
 
-                Thread t = new Thread(new ThreadStart(Go));         // threadStart egy delegate (paraméter és visszatérési érték nélküli)
+                Thread t = new Thread(new ThreadStart(WaitTest_Go));         // threadStart egy delegate (paraméter és visszatérési érték nélküli)
                 t.Name = "egyes szál";
                 t.IsBackground = false;
 
@@ -20,6 +20,10 @@ namespace Threading02
                 t2.IsBackground = false;                                                        // az alapértelmezett az előtérszáll. background szál esetén a finaly sem fut le, egyszerűen elhal az alkalmazás
 
                 t.Start();
+
+                Thread.Sleep(100);
+                Console.WriteLine($"t state: {t.ThreadState}");
+
                 t.Join();
                 t2.Start("hihi");
 
@@ -43,6 +47,12 @@ namespace Threading02
             Console.WriteLine($"{param} hello from {Thread.CurrentThread.Name}, {Thread.CurrentThread.IsAlive} {Thread.CurrentThread.ThreadState} {Thread.CurrentThread.Priority} {Thread.CurrentThread.IsThreadPoolThread} {Thread.CurrentThread.GetApartmentState()}");
 
             // throw new Exception($"{nameof(GoWithParameter)} exception");   -> explicit módon kell kezelni
+        }
+
+        private static void WaitTest_Go()
+        {
+            Console.WriteLine($"{nameof(WaitTest_Go)} hello from {Thread.CurrentThread.Name}, {Thread.CurrentThread.IsAlive} {Thread.CurrentThread.ThreadState} {Thread.CurrentThread.Priority} {Thread.CurrentThread.IsThreadPoolThread} {Thread.CurrentThread.GetApartmentState()}");
+            Thread.Sleep(5000);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace Threading02
 {
-    internal class QUserWorkItem
+    internal class QUserWorkItem                // threadpoolt használja
     {
         public static void Execute()
         {
