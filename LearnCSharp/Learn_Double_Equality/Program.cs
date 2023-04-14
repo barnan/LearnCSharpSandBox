@@ -39,6 +39,8 @@ namespace Learn_Double_Equality
             int item_value;
             dict.TryGetValue(k, out item_value);
 
+            Equality.NearlyEquals(10.1, 10.1, 1E-7);
+
             Console.ReadKey();
         }
     }

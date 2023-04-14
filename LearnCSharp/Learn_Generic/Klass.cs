@@ -18,21 +18,17 @@ namespace Learn_Generic
 
         public Klass(ushort[] input)
         {
-            content = input;
+            //content = input;
         }
 
 
 
         public Klass(double[] input)
         {
-            content = input;
+            //content = input;
         }
 
-        public Klass<T>(T[] input)
-        {
-            content = input;
-        }
-
+        
 
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6CCB76F-5C83-4CA4-9BAA-26F984886769}</ProjectGuid>
+    <ProjectGuid>{76C261AE-DD81-42A6-A3FC-A73EA7B20C5D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Learn_ToString</RootNamespace>
-    <AssemblyName>Learn_ToString</AssemblyName>
+    <RootNamespace>Learn_CurrrentDirectory</RootNamespace>
+    <AssemblyName>Learn_CurrrentDirectory</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProcessFlow.cs" />
-    <Compile Include="ProcessFlow2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -11,7 +11,7 @@ namespace Learn_Double_Equality
             return NearlyEqual(x, y, epsilon);
         }
 
-        public static bool NearlyEqual(double x, double y, double epsilon)
+        private static bool NearlyEqual(double x, double y, double epsilon)
         {
             // shortcut, handles infinities
             if (x == y)
