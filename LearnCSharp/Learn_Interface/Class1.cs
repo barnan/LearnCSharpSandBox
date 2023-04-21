@@ -36,6 +36,15 @@ namespace Learn_Interface
         }
     }
 
-    internal partial class Class1          // abstract is static is lehet a partial class, de akkor is static lesz az összes többi részlet is
-    { }
+    internal partial class Class1 // abstract is static is lehet a partial class, de akkor is static lesz az összes többi részlet is
+    {
+
+
+        public class Class10            // ezt elvileg nem lehetne public -ra definiálni, de gyakorlatilag lehet
+        {
+            private int field1;
+        }
+
+
+    }
 }

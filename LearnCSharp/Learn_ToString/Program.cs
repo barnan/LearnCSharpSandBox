@@ -11,6 +11,8 @@ namespace Learn_ToString
             ToStringTest_01();
             ToStringTest_02();
 
+            int.Parse("2");
+
             Console.ReadKey();
         }
 

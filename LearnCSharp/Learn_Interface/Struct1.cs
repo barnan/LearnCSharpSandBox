@@ -15,7 +15,7 @@
         }
     }
 
-    internal partial struct Struct1
+    internal partial struct Struct1             // lehet partial struct-ot definiálni
     {
         public Struct1(int b)
         {
@@ -31,5 +31,13 @@
         {
             System.Console.WriteLine($"Kiir valamit partial method01-1 {g = 40}");
         }
+
+        
+        public class NestedClass                   // lehet structban nested class-t definiálni
+        {
+            private int field1;
+        }
+
+
     }
 }

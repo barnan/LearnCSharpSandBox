@@ -60,6 +60,10 @@ namespace Learn_Interface
 
             Console.WriteLine(probaDict.Count);
 
+
+            Struct1.NestedClass cl = new Struct1.NestedClass();
+            Class1.Class10 cl2 = new Class1.Class10();
+
             Console.WriteLine();
         }
     }
