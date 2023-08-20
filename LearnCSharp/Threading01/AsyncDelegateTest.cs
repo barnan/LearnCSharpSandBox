@@ -13,6 +13,7 @@ namespace Threading01
             {
                 Console.WriteLine($"del1 in {Thread.CurrentThread.ManagedThreadId}");
                 Thread.Sleep(1000);
+                //throw new Exception("proba");                 // az EndInvoke() adja vissza kivételt is
                 return x + y;
             };
 
@@ -35,7 +36,7 @@ namespace Threading01
             MyDelegate work = (MyDelegate)ar.AsyncState;        // az asyncstate tul képpen a delegate önmaga, arról lehet lekérni az eredményt
             Console.WriteLine($"state -> {work}");
 
-            int result = work.EndInvoke(ar);        // blokkoló hívás, megvárja az eredményt
+            int result = work.EndInvoke(ar);        // blokkoló hívás, megvárja az eredményt, és az exception is itt jön vissza.
             Console.WriteLine($"result -> {result}");
         }
     }
