@@ -47,6 +47,17 @@ namespace Learn_Array
             watch1.Stop();
 
             Console.WriteLine($"array.create: {watch1.ElapsedMilliseconds}");
+
+            watch1.Restart();
+
+            for (int i = 0; i < cycleNumber; i++)
+            {
+                byte[] data = new byte[arraySize];
+            }
+
+            watch1.Stop();
+
+            Console.WriteLine($"indexer: {watch1.ElapsedMilliseconds}");
         }
 
 

@@ -6,6 +6,30 @@ namespace Threading02
     {
         private static void Main(string[] args)
         {
+            BackgroundTest.Execute(new string[] { "heheh" });
+
+            System.Console.WriteLine("------------------------------------------");
+
+            AsyncDelegateTest.Execute();
+
+            System.Console.WriteLine("------------------------------------------");
+
+            ThreadPoolTest.Execute();
+
+            System.Console.WriteLine("------------------------------------------");
+
+            MonitorTest.Execute();
+
+            System.Console.WriteLine("------------------------------------------");
+
+            InterlockedTest.Execute();
+
+            System.Console.WriteLine("------------------------------------------");
+
+            //Threads02.Execute();
+
+            System.Console.WriteLine("------------------------------------------");
+
             Threads01.Execute();
 
             System.Console.WriteLine("------------------------------------------");
@@ -13,12 +37,6 @@ namespace Threading02
             Tasks01.Execute();
 
             System.Console.WriteLine("------------------------------------------");
-
-            QUserWorkItem.Execute();
-
-            System.Console.WriteLine("------------------------------------------");
-
-            //AsyncDelegate.Execute();        // AsyncDelegate nem támogatott .not core alatt
 
             Console.ReadKey();
         }

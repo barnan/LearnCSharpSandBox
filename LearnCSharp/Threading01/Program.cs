@@ -1,12 +1,16 @@
 ﻿using System;
 
-namespace Threading02
+namespace Threading01
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
-            AsyncDelegate.Execute();
+            AsyncDelegateTest.Execute();
+
+            Threads02.Execute();
+
+            DelegateTest.Execute();
 
             Console.ReadKey();
         }

@@ -44,10 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Array_Conversion.cs" />
     <Compile Include="Array_CreateSpeedTest.cs" />
     <Compile Include="Array_ReverseSpeedTest.cs" />
     <Compile Include="Array_SetSpeedTest.cs" />
     <Compile Include="Array_SizeTest.cs" />
+    <Compile Include="Array_Test.cs" />
     <Compile Include="Bitconverter.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

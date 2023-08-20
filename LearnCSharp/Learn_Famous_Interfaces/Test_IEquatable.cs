@@ -15,8 +15,6 @@ namespace Learn_Famous_Interfaces
             Console.WriteLine(ember1 == ember2);                        // ezt is külön override-olni kell, nem elég az Equals()-t override-olni
 
             // ha nincs a classban definiálva a IEquatable, akkor az összes false, ellenkező esetben oda hív be
-
-            Console.ReadKey();
         }
     }
 }

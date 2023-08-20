@@ -23,9 +23,14 @@ namespace Learn_Generic
 
         }
 
-        public void Ir<T>(T input)
+        public void Ir(T input)
         {
+            ize = input;
+        }
 
+        public void Ir<G>(G input)
+        {
+            // ize = input;       // tipuskonverzio szukseges
         }
     }
 }
