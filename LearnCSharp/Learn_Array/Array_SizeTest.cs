@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Learn_Array
 {
@@ -15,15 +11,15 @@ namespace Learn_Array
 
             byte[] array01 = new byte[height * width];
 
-            Console.WriteLine(array01.Length);
-            Console.WriteLine(array01.GetLength(0));
-            Console.WriteLine(Buffer.ByteLength(array01));
+            Console.WriteLine("byte array.length: {0}", array01.Length);                    
+            Console.WriteLine("byte array.getlength: {0}", array01.GetLength(0));
+            Console.WriteLine("byte Buffer.ByteLength: {0}", Buffer.ByteLength(array01));
 
             ushort[] array02 = new ushort[height * width];
 
-            Console.WriteLine(array02.Length);
-            Console.WriteLine(array02.GetLength(0));
-            Console.WriteLine(Buffer.ByteLength(array02));
+            Console.WriteLine("ushort array.length: {0}", array02.Length);                          // ez az elemek számát adja meg
+            Console.WriteLine("ushort array.getlength: {0}", array02.GetLength(0));                 // ez az elemek számát adja meg
+            Console.WriteLine("ushort Buffer.ByteLength: {0}", Buffer.ByteLength(array02));         // ez a bájt méretet adja meg
 
 
         }

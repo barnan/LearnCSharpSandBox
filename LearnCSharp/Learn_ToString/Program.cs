@@ -18,6 +18,24 @@ namespace Learn_ToString
 
         private static void ToStringTest_00()
         {
+            DateTime dateValue = new DateTime(2009, 6, 1, 16, 37, 0);
+            CultureInfo[] cultures = {  new CultureInfo("en-US"),
+                                        new CultureInfo("fr-FR"),
+                                        new CultureInfo("hu-HU"),
+                                        new CultureInfo("de-DE") };
+            Console.WriteLine($"{dateValue.ToString("G", cultures[0])} getformat -> {0}", cultures[0].GetFormat(typeof(NumberFormatInfo)));
+            Console.WriteLine($"{dateValue.ToString("G", cultures[1])} getformat -> {0}", cultures[1].GetFormat(typeof(NumberFormatInfo)));
+            Console.WriteLine($"{dateValue.ToString("G", cultures[2])} getformat -> {0}", cultures[2].GetFormat(typeof(NumberFormatInfo)));
+            Console.WriteLine($"{dateValue.ToString("G", cultures[3])} getformat -> {0}", cultures[3].GetFormat(typeof(NumberFormatInfo)));
+
+            Console.WriteLine(string.IsInterned("valami ") != null);
+            string.Intern($"valami {0}");
+            Console.WriteLine(string.IsInterned($"valami {0}") != null);
+            Console.WriteLine(string.IsInterned($"valami {1}") != null);
+
+            //Console.WriteLine(string.IsInterned($"valami " + "1") != null);
+
+
             double d = 200.123456;
             int i = 400;
 
@@ -33,8 +51,12 @@ namespace Learn_ToString
             // string equality:
             ProcessFlow p1 = new ProcessFlow { Name = "AxisProcess1" };
             ProcessFlow p2 = new ProcessFlow { Name = "AxisProcess1" };
+            ProcessFlow p3 = new ProcessFlow { Name = $"AxisProcess{1}" };
+            ProcessFlow p4 = new ProcessFlow { Name = string.Format("AxisProcess{0}", 1) };
             Console.WriteLine(p1 == p2);
             Console.WriteLine(p1.Name == p2.Name);
+            Console.WriteLine(p1.Name == p3.Name);
+            Console.WriteLine(p1.Name == p4.Name);
 
 
             ProcessFlow2 pf1 = new ProcessFlow2 { Name = "AxisProcess2" };

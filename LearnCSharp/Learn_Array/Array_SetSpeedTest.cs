@@ -12,7 +12,7 @@ namespace Learn_Array
         internal static void Test()
         {
             int cycleNumber = 1000;
-            int arraySize = 1000000;
+            int arraySize = 100000;
 
             Stopwatch watch1 = new Stopwatch();
             watch1.Start();
@@ -73,6 +73,20 @@ namespace Learn_Array
             watch1.Stop();
 
             Console.WriteLine($"array.setvalue: {watch1.ElapsedMilliseconds}");
+
+            watch1.Restart();
+
+            for (int m = 0; m < cycleNumber; m++)
+            {
+                for (int i = 0; i < data2.Length; i++)
+                {
+                    data2[i] = 100;
+                }
+            }
+
+            watch1.Stop();
+
+            Console.WriteLine($"indexer: {watch1.ElapsedMilliseconds}");
         }
 
     }

@@ -13,6 +13,7 @@ namespace Threading02
 
                 Thread t = new Thread(new ThreadStart(WaitTest_Go));         // threadStart egy delegate (paraméter és visszatérési érték nélküli)
                 t.Name = "egyes szál";
+                t.Name = "1. szál";
                 t.IsBackground = false;
 
                 Thread t2 = new Thread(new ParameterizedThreadStart(GoWithParameter));         // parameterizedthreadstart egy delegate (PARAMÉTERES és visszatérési érték nélküli)
@@ -42,15 +43,16 @@ namespace Threading02
             // throw new Exception($"{nameof(Go)} exception");
         }
 
-        private static void GoWithParameter(object param)
+        private static void GoWithParameter(object parameter)
         {
-            Console.WriteLine($"{param} hello from {Thread.CurrentThread.Name}, {Thread.CurrentThread.IsAlive} {Thread.CurrentThread.ThreadState} {Thread.CurrentThread.Priority} {Thread.CurrentThread.IsThreadPoolThread} {Thread.CurrentThread.GetApartmentState()}");
+            Console.WriteLine($"{parameter} hello from {Thread.CurrentThread.Name}, {Thread.CurrentThread.IsAlive} {Thread.CurrentThread.ThreadState} {Thread.CurrentThread.Priority} {Thread.CurrentThread.IsThreadPoolThread} {Thread.CurrentThread.GetApartmentState()}");
 
             // throw new Exception($"{nameof(GoWithParameter)} exception");   -> explicit módon kell kezelni
         }
 
         private static void WaitTest_Go()
         {
+            Thread.CurrentThread.Name = "szál";
             Console.WriteLine($"{nameof(WaitTest_Go)} hello from {Thread.CurrentThread.Name}, {Thread.CurrentThread.IsAlive} {Thread.CurrentThread.ThreadState} {Thread.CurrentThread.Priority} {Thread.CurrentThread.IsThreadPoolThread} {Thread.CurrentThread.GetApartmentState()}");
             Thread.Sleep(5000);
         }

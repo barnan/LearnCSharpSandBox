@@ -6,6 +6,10 @@ namespace Threading02
     {
         private static void Main(string[] args)
         {
+            Threads02.Execute();
+
+            System.Console.WriteLine("------------------------------------------");
+
             Threads01.Execute();
 
             System.Console.WriteLine("------------------------------------------");

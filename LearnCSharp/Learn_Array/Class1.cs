@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 using Learn_Array;
 
@@ -21,50 +20,38 @@ namespace Learn_ArraySpeed
 
            
             
-
-
-
-        
-        
-        
-
-
-
         static void Main(string[] args)
         {
-            string stopMessage = BitConverter.ToString(STOP_MESSAGE);
-            string arbitraryMessage = Encoding.ASCII.GetString(ARBITRARY_MESSAGE_2);
-            string arbitraryMessage_3 = Encoding.ASCII.GetString(ARBITRARY_MESSAGE_3);
-            string arbitraryMessage_4 = Encoding.ASCII.GetString(ARBITRARY_MESSAGE_4);
-            string arbitraryMessage_5 = Encoding.ASCII.GetString(ARBITRARY_MESSAGE_5);
+            //string stopMessage = BitConverter.ToString(STOP_MESSAGE);
+            //string arbitraryMessage = Encoding.ASCII.GetString(ARBITRARY_MESSAGE_2);
+            //string arbitraryMessage_3 = Encoding.ASCII.GetString(ARBITRARY_MESSAGE_3);
+            //string arbitraryMessage_4 = Encoding.ASCII.GetString(ARBITRARY_MESSAGE_4);
+            //string arbitraryMessage_5 = Encoding.ASCII.GetString(ARBITRARY_MESSAGE_5);
 
-            Console.WriteLine(arbitraryMessage);
-            Console.WriteLine(arbitraryMessage_3);
-            Console.WriteLine(arbitraryMessage_4);
-            Console.WriteLine(arbitraryMessage_5);
-            Console.WriteLine(ResponseContainsError(arbitraryMessage));
-            Console.WriteLine(stopMessage);
+            //Console.WriteLine(arbitraryMessage);
+            //Console.WriteLine(arbitraryMessage_3);
+            //Console.WriteLine(arbitraryMessage_4);
+            //Console.WriteLine(arbitraryMessage_5);
+            //Console.WriteLine(ResponseContainsError(arbitraryMessage));
+            //Console.WriteLine(stopMessage);
 
+            // ***************************************************************************************--
 
+            var array = System.Array.CreateInstance(typeof(int), new[] { 5 }, new int[] { 2 });     // így lehet tömböt nem 0 kezdőindexszel létrehozni)
 
             BitconverterTest.Test();
 
-           //Array_CreateSpeedTest.Test();
+            Array_CreateSpeedTest.Test();       // körülbelül egyforma a kettős sebessége (A GC szerintem ezt nagyon befolyásolja)
 
-            //Array_SetSpeedTest.Test();
+            Array_SetSpeedTest.Test();          // az indexer sokkal gyorsabb (kb egy nagyságrend)
 
-            //Array_ReverseSpeedTest.Test();
+            Array_ReverseSpeedTest.Test();      // az array metódusa gyorsabb
 
             Array_SizeTest.Test();
 
-            int k = 10;
+            Array_Test.Test();
 
-            k *= 3 / 2;
-
-            Console.WriteLine(k);
-
-            Console.WriteLine(1.1d.ToString("N0"));
-
+            Array_Conversion.Test();
 
 
             Console.ReadKey();

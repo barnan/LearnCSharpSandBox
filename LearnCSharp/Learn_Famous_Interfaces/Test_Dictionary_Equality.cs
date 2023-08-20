@@ -21,8 +21,6 @@ namespace Learn_Famous_Interfaces
             Console.WriteLine(dict.ContainsKey(ember1));
 
             dict.Remove(ember2);
-
-            Console.ReadKey();
         }
     }
 }

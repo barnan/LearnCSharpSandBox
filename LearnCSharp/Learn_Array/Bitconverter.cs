@@ -30,7 +30,7 @@ namespace Learn_Array
             //byte nTesztVariable = Convert.ToByte(tesztVariable03);
 
             bool bTtesztVariable01 = Convert.ToBoolean(tesztVariable01);
-            //bool bTtesztVariable02 = Convert.ToBoolean(tesztVariable02);
+            // bool bTtesztVariable02 = Convert.ToBoolean(tesztVariable02);    -->> Exception-t dob
             bool bTtesztVariable03 = Convert.ToBoolean(tesztVariable03);
 
         }

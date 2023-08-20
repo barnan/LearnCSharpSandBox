@@ -1,4 +1,5 @@
 ﻿using System;
+using Threading01;
 
 namespace Threading02
 {
@@ -6,6 +7,10 @@ namespace Threading02
     {
         private static void Main(string[] args)
         {
+            Threads02.Execute();
+
+            DelegateTest.Execute();
+
             AsyncDelegate.Execute();
 
             Console.ReadKey();

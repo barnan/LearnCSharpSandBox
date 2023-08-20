@@ -29,7 +29,7 @@ namespace Learn_Array
 
             watch1.Stop();
 
-            Console.WriteLine($"Reverse: {watch1.ElapsedMilliseconds}");
+            Console.WriteLine($"Array.Reverse: {watch1.ElapsedMilliseconds}");
 
             watch1.Restart();
 
@@ -57,9 +57,24 @@ namespace Learn_Array
 
             watch1.Stop();
 
-            Console.WriteLine($"indexer: {watch1.ElapsedMilliseconds}");
+            Console.WriteLine($"Array.Reverse: {watch1.ElapsedMilliseconds}");
 
-            Console.ReadKey();
+            watch1.Restart();
+
+            for (int i = 0; i < cycleNumber; i++)
+            {
+                for (int j = 0; j < arraySize / 2; j++)
+                {
+                    byte tempHolder = data[j];
+                    data[j] = data[arraySize - j - 1];
+                    data[arraySize - j - 1] = tempHolder;
+                }
+
+            }
+
+            watch1.Stop();
+
+            Console.WriteLine($"indexer: {watch1.ElapsedMilliseconds}");
 
         }
     }

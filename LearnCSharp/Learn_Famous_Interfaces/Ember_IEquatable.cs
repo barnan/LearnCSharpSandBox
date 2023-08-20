@@ -20,18 +20,18 @@ namespace Learn_Famous_Interfaces
     //      - mutable mezőkből számolható a hashcode
     //      - időben nem változnak az immutable mezők, amíg collection-ben van
 
-    internal class Ember_IEquatable // IEquatable<Ember_IEquatable>
+    internal class Ember_IEquatable : IEquatable<Ember_IEquatable>
     {
         public int Age { get; set; }
 
         public string Name { get; set; }
 
         // típusos, ide hív pl Dictionary-ből, List-ből az x.Equals(x), de csak akkor ha rajta van az IEquatable<>
-        // síma típusos egyenlőségvizsgálatnál megtalálja az interface nélkül is
+        // síma típusos egyenlőségvizsgálatnál megtalálja az interface nélkül is (paraméter egyezés alapján)
         public bool Equals(Ember_IEquatable other)
         {
-            return Age == other.Age && Name == other.Name;
-            //return Name == other.Name;
+            // return Age == other.Age && Name == other.Name;
+            return Age == other.Age;
         }
 
         // típustalan, ide hív tovább az Object.Equals(obj1, obj2)

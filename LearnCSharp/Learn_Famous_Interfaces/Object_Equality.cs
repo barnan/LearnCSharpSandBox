@@ -21,15 +21,13 @@ namespace Learn_Famous_Interfaces
             Console.WriteLine(hello1.Equals(hello1));                        // 3, az 1-es bal oldali objektumának equals(obj) metódusát hívja
             Console.WriteLine(hello1 == hello1);
 
-            //double d1 = 10;
-            //double d2 = 10;
+            double d1 = 10;
+            double d2 = 10;
 
-            //Console.WriteLine(Object.Equals(d1, d2));                           // ez overrideolja a ValueType, reflection-t használ, célszerű overrideolni
-            //Console.WriteLine(Object.ReferenceEquals(d1, d2));                  // ez értéktípusra mindig false
-            //Console.WriteLine(d1.Equals(d2));                                   // ez override-olható a típusban
-            //Console.WriteLine(d1 == d2);                                        // ez is override-olható a típusban
-
-            Console.ReadKey();
+            Console.WriteLine(Object.Equals(d1, d2));                           // ez overrideolja a ValueType, reflection-t használ, célszerű overrideolni
+            Console.WriteLine(Object.ReferenceEquals(d1, d2));                  // ez értéktípusra mindig false
+            Console.WriteLine(d1.Equals(d2));                                   // ez override-olható a típusban
+            Console.WriteLine(d1 == d2);                                        // ez is override-olható a típusban
         }
     }
 }
