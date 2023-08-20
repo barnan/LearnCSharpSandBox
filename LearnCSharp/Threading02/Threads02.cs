@@ -6,23 +6,21 @@ namespace Threading02
 {
     internal class TLSClass
     {
-        public TLSClass()
+        public TLSClass(string input = "")
         {
-            Console.WriteLine($"{typeof(TLSClass)} is instantiated");           // ez csak egyszer hívódik meg!!
+            Console.WriteLine($"{typeof(TLSClass)} is instantiated -> {input}");           // ez csak egyszer hívódik meg!! mivel a TSClassContainer static field inicializálója csak egyszer hívódik meg
         }
     }
 
     internal class TSClassContainer
     {
         [ThreadStatic]                                                          // az attributum miatt 
-        internal static TLSClass klass = new TLSClass();
+        internal static TLSClass klass = new TLSClass("fix");
 
         [ThreadStatic]
         internal static int klass2;
         
     }
-
-
 
     internal class TLSClass2
     {
@@ -43,7 +41,9 @@ namespace Threading02
                 object obj = Thread.GetData(slot);
                 if (obj == null)
                 {
-                    obj = new TLSClass();
+                    long id = Thread.CurrentThread.ManagedThreadId;
+
+                    obj = new TLSClass(id.ToString());
                     Thread.SetData(slot, obj);
                 }
                 return (TLSClass)obj;
@@ -65,9 +65,18 @@ namespace Threading02
 
             Thread th1 = new Thread(Go);
             Thread th2 = new Thread(Go);
-    
+
             th1.Start();
             th2.Start();
+
+            th1.Join();
+            th2.Join();
+
+            Thread th3 = new Thread(Go2);
+            Thread th4 = new Thread(Go2);
+
+            th3.Start();
+            th4.Start();
 
             Console.ReadKey();
         }
@@ -83,6 +92,20 @@ namespace Threading02
             Thread.Sleep(100);
 
             Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} klass2: {TSClassContainer.klass2}  {TSClassContainer.klass2.GetHashCode()}");
+
+            Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} is ended");
+
+        }
+
+        private static void Go2()
+        {
+            Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} is started");
+
+            Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} Slot: {TLSClass2.Slot}  {TLSClass2.Slot?.GetHashCode()}");
+
+            Thread.Sleep(100);
+
+            Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} Slot: {TLSClass2.Slot}  {TLSClass2.Slot.GetHashCode()}");
 
             Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} is ended");
         }
