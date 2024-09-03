@@ -7,11 +7,10 @@ namespace Learn_ToString
     {
         private static void Main(string[] args)
         {
-            ToStringTest_00();
-            ToStringTest_01();
-            ToStringTest_02();
-
-            int.Parse("2");
+            //ToStringTest_00();
+            //ToStringTest_01();
+            //ToStringTest_02();
+            ToStringTest_03();
 
             Console.ReadKey();
         }
@@ -76,13 +75,6 @@ namespace Learn_ToString
             //catch (ArgumentException ae) { }
 
             Console.ReadKey();
-
-
-
-
-
-
-
         }
 
         private static void ToStringTest_01()
@@ -99,6 +91,14 @@ namespace Learn_ToString
 
             Console.WriteLine(Convert.ToString(variable01));
             //Console.WriteLine(variable01.ToString());             // a sima ToString() nem tud null-t kezelni
+        }
+
+        private static void ToStringTest_03()
+        {
+            double szam = 34543543.45643234234;
+            Console.WriteLine(szam.ToString("E1"));
+            Console.WriteLine(szam.ToString("E4"));
+            Console.WriteLine(szam.ToString("#.##E0"));
         }
     }
 }
