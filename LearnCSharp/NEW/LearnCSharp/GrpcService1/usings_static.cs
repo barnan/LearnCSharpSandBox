@@ -1,0 +1,1 @@
+﻿global using static GrpcService1.Protos.GreeterService2;

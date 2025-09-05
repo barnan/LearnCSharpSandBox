@@ -1,0 +1,33 @@
+﻿syntax = "proto3";
+
+package greet;
+
+option csharp_namespace = "GrpcService1.Protos";
+
+import "google/protobuf/empty.proto";	
+
+service GreeterService2
+{
+	rpc GreetUser (MyGreetUserRequest) returns (MyGreetUserResponse);										// unary call
+	rpc GreetMultipleUsers (MyGreetMultipleUsersRequest) returns (google.protobuf.Empty);						// multiplex call
+	rpc GreetMultipleUsersStream (stream MyGreetUserRequest) returns (google.protobuf.Empty);				// client stream call
+	//rpc GreetMultipleUsersStreamServer (GreetMultipleUsersRequest) returns (stream GreetUserResponse);	// server stream call
+	//rpc GreetUserMultipleUsersUber (stream GreetUserRequest) returns (stream GreetUserResponse);			// server-client stream call
+}
+
+
+message MyGreetUserRequest
+{
+	string user_name = 1;
+}
+
+message MyGreetUserResponse
+{
+	string greeting_message = 1;
+}
+
+
+message MyGreetMultipleUsersRequest
+{
+	repeated string user_names = 1;
+}

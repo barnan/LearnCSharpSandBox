@@ -1,0 +1,1 @@
+﻿global using GrpcService1.Services;
